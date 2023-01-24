@@ -1,0 +1,14 @@
+html body {
+    margin: 0;
+    padding: 0;
+
+    .container {
+        display: flex;
+
+        .section-card {
+            background: url(../images/bg-main-desktop.png) no-repeat;
+            width: 60%;
+            height: 800px;
+        }
+    }
+}
