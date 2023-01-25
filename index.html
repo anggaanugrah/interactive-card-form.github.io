@@ -9,53 +9,54 @@
   <!-- Link Css -->
   <link rel="stylesheet" href="./style/main.css">
 
-  <title>Frontend Mentor | Interactive card details form</title>
+  <!-- Link Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Frontend Mentor | Interactive card details form</title>
 </head>
 <body>
 
   <div class="container">
     <div class="section-card">
       <div class="card-front">
-        <div class="logo-card"></div>
-        <h3>0000 0000 0000 0000</h3>
+        <div class="card-logo"></div>
+        <h3 class="card-number">0000 0000 0000 0000</h3>
         <div class="identity">
           <p class="card-name">Jane Appleseed</p>
           <p class="card-date">00/00</p>
-
         </div>
       </div>
-      <div class="card-back"></div>
+      <div class="card-back">
+        <p class="card-cvc">000</p>
+      </div>
     </div>
-    <div class="section-form"></div>
+    <div class="section-form">
+        <form action="#">
+      
+          <label for="txt-name">Cardholder Name</label>
+          <input type="text" id="txt-name" name="txt-name" placeholder="e.g. Jane Appleseed">
+      
+          <label for="txt-number">Card Number</label>
+          <input type="text" id="txt-number" name="txt-number" placeholder="e.g. 1234 5678 9123 0000">
+      
+          <div class="date-cvc">
+            <div class="exp-date">
+              <label for="txt-date">Exp. Date (MM/YY)</label>
+              <input type="text" id="txt-month" name="txt-month" placeholder="MM">
+              <input type="text" id="txt-year" name="txt-year" placeholder="YY">
+            </div>
 
-  000
+            <div class="cvc-form">
+              <label for="txt-cvc">CVC</label>
+              <input type="text" id="txt-cvc" name="txt-cvc" placeholder="e.g. 123">
+            </div>
+          </div>
 
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
+          <button type="submit" value="confirm">Confirm</button>
+        </form>
+    </div>
   </div>
 </body>
 </html>
