@@ -11,6 +11,10 @@ const submitButton = document.getElementById('submit');
 // Form id
 const form = document.querySelector('#credit-card');
 
+// Section
+const sectionForm = document.querySelector('.section-form');
+const sectionComplete = document.querySelector('.section-complete');
+
 // Card Text
 const cardDisplayName = document.querySelector('.card-name');
 const cardDisplayNumber = document.querySelector('.card-number');
@@ -163,7 +167,9 @@ form.addEventListener('submit', function (e) {
         cardDisplayNumber.innerHTML = numberEl.value,
         cardDisplayMonth.innerHTML = monthEl.value,
         cardDisplayYear.innerHTML = yearEl.value,
-        cardDisplayCvc.innerHTML = cvcEl.value
+        cardDisplayCvc.innerHTML = cvcEl.value,
+        sectionComplete.classList.remove('hidden'),
+        sectionForm.style.display = 'none'
     }
 });
 

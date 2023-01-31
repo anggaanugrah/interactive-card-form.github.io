@@ -36,6 +36,8 @@
         <p class="card-cvc">000</p>
       </div>
     </div>
+
+    <!-- Form Section -->
     <div class="section-form">
         <form id="credit-card" class="form">
           <div class="form-field">
@@ -71,6 +73,14 @@
           <button type="submit" id="submit" value="confirm">Confirm</button>
         </form>
     </div>
+
+    <!-- Complete State Section -->
+    <div class="section-complete hidden">
+      <img src="./images/icon-complete.svg">
+      <h2>Thank You!</h2>
+      <p>We've added your card details</p>
+      <button type="submit" id="continue" value="continue">Continue</button>
+    </div>
   </div>
 
 
@@ -84,14 +94,23 @@
       }
     })
 
-    // document.getElementById('txt-number').addEventListener('input', function (e) {
-    //   e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
-    // });
+    // script credit card input mask
     document.getElementById('txt-number').addEventListener('input', function (e) {
       var target = e.target, position = target.selectionEnd, length = target.value.length;
       
       target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
       target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' && target.value.charAt(length - 1) === ' ' && length !== target.value.length) ? 1 : 0);
+    });
+
+
+    // script for return to previous form and reset form input field
+    const formSection = document.querySelector('.section-form');
+    const complete = document.querySelector('.section-complete');
+    const continueButton = document.getElementById("continue");
+    continueButton.addEventListener("click", () => {
+      complete.classList.add("hidden"),
+      formSection.style.display = "flex",
+      document.getElementById("credit-card").reset();
     });
   </script>
 

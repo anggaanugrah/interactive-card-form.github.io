@@ -93,6 +93,7 @@ html body {
         }
 
         .section-form {
+            // display: none;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -201,10 +202,59 @@ html body {
                     transition: all 0.3s;
 
                     &:hover {
-                        background-color: hsl(280, 64%, 6%);
+                        background-color: $lightViolet;
                     }
                 }
             }
+        }
+
+        .section-complete {
+            // display: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 60%;
+            font-family: $font;
+
+            img {
+                margin: 10px;
+            }
+
+            h2 {
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                color: $darkViolet;
+                margin-bottom: 10px;
+            }
+
+            p {
+                margin-top: 10px;
+                margin-bottom: 30px;
+                color: $darkGrey;
+                font-weight: 500;
+            }
+
+            button {
+                background-color: $darkViolet;
+                color: $white;
+                font-family: $font;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                height: 50px;
+                width: 350px;
+                cursor: pointer;
+                transition: all 0.3s;
+
+                &:hover {
+                    background-color: $lightViolet;
+                }
+            }
+        }
+
+        .hidden {
+            display: none;
         }
     }
 }
