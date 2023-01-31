@@ -84,7 +84,12 @@ html body .container .section-form form {
   width: 50%;
   box-sizing: border-box;
 }
-html body .container .section-form form label {
+html body .container .section-form form .form-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+html body .container .section-form form .form-field label {
   font-weight: 600;
   text-transform: uppercase;
   color: hsl(278deg, 68%, 11%);
@@ -94,7 +99,7 @@ html body .container .section-form form label {
   margin-top: 25px;
   margin-bottom: 10px;
 }
-html body .container .section-form form input {
+html body .container .section-form form .form-field input {
   font-family: "Space Grotesk", sans-serif;
   color: hsl(278deg, 68%, 11%);
   opacity: 0.9;
@@ -106,33 +111,42 @@ html body .container .section-form form input {
   padding-left: 15px;
   transition: all 0.3s;
 }
-html body .container .section-form form input::-moz-placeholder {
+html body .container .section-form form .form-field input::-moz-placeholder {
   font-size: 16px;
   color: hsl(279deg, 6%, 55%);
   opacity: 0.6;
   font-weight: 500;
 }
-html body .container .section-form form input:-ms-input-placeholder {
+html body .container .section-form form .form-field input:-ms-input-placeholder {
   font-size: 16px;
   color: hsl(279deg, 6%, 55%);
   opacity: 0.6;
   font-weight: 500;
 }
-html body .container .section-form form input::placeholder {
+html body .container .section-form form .form-field input::placeholder {
   font-size: 16px;
   color: hsl(279deg, 6%, 55%);
   opacity: 0.6;
   font-weight: 500;
 }
-html body .container .section-form form input:focus {
+html body .container .section-form form .form-field input:focus {
   outline: none;
   border: 1px solid hsl(278deg, 44%, 44%);
   color: hsl(278deg, 68%, 11%);
 }
+html body .container .section-form form .form-field small {
+  color: hsl(0deg, 100%, 66%);
+}
+html body .container .section-form form .error input {
+  border-color: hsl(0deg, 100%, 66%);
+}
+html body .container .section-form form .success input {
+  border-color: none;
+}
 html body .container .section-form form .date-cvc {
   display: flex;
   width: 100%;
-  margin-top: 25px;
+  margin-top: 5px;
   box-sizing: border-box;
   margin-bottom: 30px;
 }
@@ -140,14 +154,14 @@ html body .container .section-form form .date-cvc .exp-date {
   width: 60%;
 }
 html body .container .section-form form .date-cvc .exp-date input {
-  margin-top: 10px;
+  margin-top: 0;
   width: 35%;
 }
 html body .container .section-form form .date-cvc .cvc-form {
   width: 35%;
 }
 html body .container .section-form form .date-cvc .cvc-form input {
-  margin-top: 10px;
+  margin-top: 0;
   width: 100%;
 }
 html body .container .section-form form button {

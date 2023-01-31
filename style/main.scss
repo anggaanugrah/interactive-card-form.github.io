@@ -7,6 +7,7 @@ $darkViolet: hsl(278, 68%, 11%);
 $lightViolet: hsl(278, 44%, 44%);
 $lightGrey: hsl(270, 3%, 87%);
 $darkGrey: hsl(279, 6%, 55%);
+$color-invalid: hsl(0, 100%, 66%);
 
 html body {
     margin: 0;
@@ -101,47 +102,67 @@ html body {
                 width: 50%;
                 box-sizing: border-box;
 
-                label {
-                    font-weight: 600;
-                    text-transform: uppercase;
-                    color: $darkViolet;
-                    opacity: 0.9;
-                    font-size: 12px;
-                    letter-spacing: 4px;
-                    margin-top: 25px;
-                    margin-bottom: 10px;
-                }
+                .form-field {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
 
-                input {
-                    font-family: $font;
-                    color: $darkViolet;
-                    opacity: 0.9;
-                    font-weight: 600;
-                    border: 1px solid $lightGrey;
-                    border-radius: 8px;
-                    height: 40px;
-                    font-size: 16px;
-                    padding-left: 15px;
-                    transition: all 0.3s;
-
-                    &::placeholder {
-                        font-size: 16px;
-                        color: $darkGrey;
-                        opacity: 0.6;
-                        font-weight: 500;
-                    }
-
-                    &:focus {
-                        outline: none;
-                        border: 1px solid $lightViolet;
+                    label {
+                        font-weight: 600;
+                        text-transform: uppercase;
                         color: $darkViolet;
+                        opacity: 0.9;
+                        font-size: 12px;
+                        letter-spacing: 4px;
+                        margin-top: 25px;
+                        margin-bottom: 10px;
+                    }
+    
+                    input {
+                        font-family: $font;
+                        color: $darkViolet;
+                        opacity: 0.9;
+                        font-weight: 600;
+                        border: 1px solid $lightGrey;
+                        border-radius: 8px;
+                        height: 40px;
+                        font-size: 16px;
+                        padding-left: 15px;
+                        transition: all 0.3s;
+    
+                        &::placeholder {
+                            font-size: 16px;
+                            color: $darkGrey;
+                            opacity: 0.6;
+                            font-weight: 500;
+                        }
+    
+                        &:focus {
+                            outline: none;
+                            border: 1px solid $lightViolet;
+                            color: $darkViolet;
+                        } 
+                    }
+                    
+                    small {
+                        color: $color-invalid;
                     }
                 }
+
+                .error input {
+                    border-color: $color-invalid;
+                }
+                
+                .success input {
+                    border-color: none;
+                }
+
+                
 
                 .date-cvc {
                     display: flex;
                     width: 100%;
-                    margin-top: 25px;
+                    margin-top: 5px;
                     box-sizing: border-box;
                     margin-bottom: 30px;
 
@@ -149,7 +170,7 @@ html body {
                         width: 60%;
 
                         input {
-                            margin-top: 10px;
+                            margin-top: 0;
                             width: 35%;
                         }
                     }
@@ -158,7 +179,7 @@ html body {
                         width: 35%;
 
                         input {
-                            margin-top: 10px;
+                            margin-top: 0;
                             width: 100%;
                         }
                     }
