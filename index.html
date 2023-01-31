@@ -25,7 +25,11 @@
         <h3 class="card-number">0000 0000 0000 0000</h3>
         <div class="identity">
           <p class="card-name">Jane Appleseed</p>
-          <p class="card-date">00/00</p>
+          <div class="card-date">
+            <p class="card-month">00</p>
+            <p>/</p>
+            <p class="card-year">00</p>
+          </div>
         </div>
       </div>
       <div class="card-back">
@@ -41,7 +45,7 @@
           </div>
           <div class="form-field">
             <label for="txt-number">Card Number</label>
-            <input type="text" id="txt-number" name="txt-number" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
+            <input type="text" id="txt-number" name="txt-number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
             <small></small>
           </div>
           <div class="date-cvc">
@@ -64,7 +68,7 @@
                 </div>
               </div>
             </div>
-          <button type="submit" value="confirm">Confirm</button>
+          <button type="submit" id="submit" value="confirm">Confirm</button>
         </form>
     </div>
   </div>
@@ -83,12 +87,12 @@
     // document.getElementById('txt-number').addEventListener('input', function (e) {
     //   e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
     // });
-    // document.getElementById('txt-number').addEventListener('input', function (e) {
-    //   var target = e.target, position = target.selectionEnd, length = target.value.length;
+    document.getElementById('txt-number').addEventListener('input', function (e) {
+      var target = e.target, position = target.selectionEnd, length = target.value.length;
       
-    //   target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
-    //   target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' && target.value.charAt(length - 1) === ' ' && length !== target.value.length) ? 1 : 0);
-    // });
+      target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+      target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' && target.value.charAt(length - 1) === ' ' && length !== target.value.length) ? 1 : 0);
+    });
   </script>
 
   <script src="./style/formValidation.js"></script>

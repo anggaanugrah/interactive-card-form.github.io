@@ -62,6 +62,10 @@ html body {
                     letter-spacing: 2px;
                     font-weight: 400;
                     font-size: 14px;
+
+                    .card-date {
+                        display: flex;
+                    }
                 }
             }
 

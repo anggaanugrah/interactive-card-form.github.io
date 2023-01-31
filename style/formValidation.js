@@ -1,11 +1,26 @@
+// Input Field
 const nameEl = document.querySelector('#txt-name');
 const numberEl = document.querySelector('#txt-number');
 const monthEl = document.querySelector('#txt-month');
 const yearEl = document.querySelector('#txt-year');
 const cvcEl = document.querySelector('#txt-cvc');
 
+// Submit button
+const submitButton = document.getElementById('submit');
+
+// Form id
 const form = document.querySelector('#credit-card');
 
+// Card Text
+const cardDisplayName = document.querySelector('.card-name');
+const cardDisplayNumber = document.querySelector('.card-number');
+const cardDisplayMonth = document.querySelector('.card-month');
+const cardDisplayYear = document.querySelector('.card-year');
+const cardDisplayCvc = document.querySelector('.card-cvc');
+
+
+
+// Function
 const checkCardname = () => {
 
     let valid = false;
@@ -19,6 +34,8 @@ const checkCardname = () => {
         showError(nameEl, 'Cardholder Name cannot be blank.');
     } else if (!isBetween(cardname.length, min, max)) {
         showError(nameEl, `Cardholder Name must be between ${min} and ${max} characters.`)
+    } else if (!isTextValid(cardname)) {
+        showError(nameEl, `Wrong format, text only.`)
     } else {
         showSuccess(nameEl);
         valid = true;
@@ -29,12 +46,12 @@ const checkCardname = () => {
 
 const checkCardnumber = () => {
     let valid = false;
-    const min = 16;
+    const min = 19;
     const cardnumber = numberEl.value.trim();
     if (!isRequired(cardnumber)) {
         showError(numberEl, 'Card Number cannot be blank.');
     } else if (!isBetween(cardnumber.length, min)) {
-        showError(numberEl, `Card Number must be ${min} characters.`)
+        showError(numberEl, `Card Number must be 16 characters.`)
     } else if (!isNumberValid(cardnumber)) {
         showError(numberEl, 'Wrong format, numbers only.')
     } else {
@@ -83,8 +100,13 @@ const checkCvc = () => {
     return valid;
 };
 
+const isTextValid = (cardname) => {
+    const re = /^[a-zA-Z\s]*$/;
+    return re.test(cardname);
+};
+
 const isNumberValid = (cardnumber) => {
-    const re = /^[0-9]+$/;
+    const re = /^[0-9 ]+$/;
     return re.test(cardnumber);
 };
 
@@ -137,7 +159,11 @@ form.addEventListener('submit', function (e) {
 
     // submit to the server if the form is valid
     if (isFormValid) {
-
+        cardDisplayName.innerHTML = nameEl.value,
+        cardDisplayNumber.innerHTML = numberEl.value,
+        cardDisplayMonth.innerHTML = monthEl.value,
+        cardDisplayYear.innerHTML = yearEl.value,
+        cardDisplayCvc.innerHTML = cvcEl.value
     }
 });
 

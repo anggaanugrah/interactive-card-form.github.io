@@ -50,6 +50,9 @@ html body .container .section-card .card-front .identity {
   font-weight: 400;
   font-size: 14px;
 }
+html body .container .section-card .card-front .identity .card-date {
+  display: flex;
+}
 html body .container .section-card .card-back {
   background: url(../images/bg-card-back.png) no-repeat;
   width: 447px;
