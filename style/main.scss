@@ -268,12 +268,12 @@ html body {
         }
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 420px) {
         .container {
             flex-direction: column;
 
             .section-card {
-                background: url(../images/bg-main-mobile.png) no-repeat;
+                background: url(../images/bg-main-mobile.png) fill;
                 width: 100%;
                 height: 240px;
 
